@@ -7,7 +7,7 @@ const config = require("../config/index").dev;
 const friendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const env = require("../config/dev.env");
 process.env.NODE_ENV = env.NODE_ENV
-
+console.log(config.main, 'main??')
 const webpackCommon = require("./webpack.common")
 
 let webpackDev = merge(webpackCommon, {
@@ -45,7 +45,7 @@ let webpackDev = merge(webpackCommon, {
   plugins: [
     // *
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': env.NODE_ENV
     }),
     new friendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
@@ -72,3 +72,5 @@ server.listen(config.port, config.host, function () {
   // 启动中的提示
   console.log('> Starting dev server...')
 })
+
+module.exports = webpackDev;

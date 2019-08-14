@@ -1,11 +1,11 @@
 const path = require('path');
 
-const srcPath = path.resolve(__dirname, '../src');
+const srcPath = path.resolve(__dirname, '../src/');
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.ts', '.tsx', '.js'],
     alias: {
       '@': srcPath
     },
@@ -15,6 +15,10 @@ module.exports = {
       test: /\.js$/,
       include: [srcPath, path.resolve(__dirname, '../example')],
       loader: 'babel-loader'
+    }, {
+      test: /\.tsx?$/,
+      loader: 'ts-loader',
+      exclude: /node_modules/
     }]
   }
 }

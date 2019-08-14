@@ -4,12 +4,12 @@ const { getIp } = require('../build/util')
 const distPath = path.resolve(__dirname, '../dist')
 let config = {
   build: {
-    main: ['@babel/polyfill', path.resolve(__dirname, '../src/index.js')],
+    main: ['@babel/polyfill', path.resolve(__dirname, '../src/index.tsx')],
     assetsRoot: distPath,
     devtool: 'source-map'
   },
   dev: {
-    main: path.resolve(__dirname, '../example/src/index.js'),
+    main: path.resolve(__dirname, '../example/src/index.tsx'),
     devtool: 'eval-source-map',
     assetsRoot: distPath,
     host: getIp(),

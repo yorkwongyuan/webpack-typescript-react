@@ -1,11 +1,14 @@
 import * as React from 'react'
-class Tick extends React.Component {
-  render() {
-    return (
-      <div>hello</div>
-    )
-  }
+const ReactDom = require("react-dom")
+function Tick() {
+  const element = <div>
+    <h1>Hello,world</h1>
+    <div>
+      The time is {new Date().toLocaleString()}
+    </div>
+  </div>
+  return element
 }
 
-export default Tick
 
+export default Tick

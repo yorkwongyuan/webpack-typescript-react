@@ -35,7 +35,12 @@ let webpackProd = merge(webpackCommon, {
       to: path.resolve(__dirname, '../dist/')
     }]),
     new webpack.optimize.ModuleConcatenationPlugin() //作用域提升 (scope hoisting)
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all' // 分割公共代码
+    }
+  }
 })
 
 const spinner = ora('项目构建当中...').start()

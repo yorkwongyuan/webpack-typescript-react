@@ -1,0 +1,14 @@
+a{
+  list-style: none;
+  text-decoration:none;
+  color:#123111;
+}
+.nav{
+  .nav-item{
+    display:inline-block;
+    margin-right: 15px;
+  }
+  .actived{
+    background:yellowgreen;
+  }
+}

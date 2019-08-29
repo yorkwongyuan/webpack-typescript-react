@@ -1,17 +1,26 @@
 ﻿{
     "compilerOptions": {
         "module": "commonjs",
+        "sourceMap": true,
         "target": "es5",
         "allowJs": true,
         "jsx": "react",
+        "outDir": "builds",
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "lib": [
+            "ES5",
+            "ES2015",
+            "dom",
+            "es2015.collection"
+        ]
     },
     "include": [
-        "./src/*"
+        "./src/*",
+        "./example/src/*"
     ],
     "exclude": [
         "./node_modules"
-    ],
-    "lib": [
-        "es2015"
     ]
 }
